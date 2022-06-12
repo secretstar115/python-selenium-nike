@@ -13,8 +13,8 @@ class Nike:
 
     def login(self):
 
-        # 쿠키 담기
-        cookies = "자신의 쿠키를 넣어주세요"
+       
+        cookies = ""
 
         driver.maximize_window()
         driver.implicitly_wait(3)
@@ -31,11 +31,11 @@ class Nike:
     def findSizeInput(self):
 
         time.sleep(0.5)
-        # 사이즈 찾기
+        # 
         driver.find_element_by_xpath('/html/body/section/section/section/article/article[2]/div/div[4]/div/div[2]/form/div[1]/div[2]/div[1]/div/span[8]').click()
 
         time.sleep(0.5)
-        # 바로 구매 버튼 클릭
+        # 
         driver.find_element_by_xpath('//*[@id="btn-buy"]').click()
 
     def order(self):
@@ -51,7 +51,7 @@ class Nike:
         driver.implicitly_wait(3)
         driver.find_element_by_xpath('//*[@id="complete_checkout"]').click()
 
-        # 결제
+        # 
         iframe = driver.find_element_by_xpath("/html/body/div[13]/iframe[2]")
         driver.switch_to.frame(iframe)
         driver.find_element_by_xpath('/html/body/div[4]/div/div/div[2]/ul/li[2]/a').click()
